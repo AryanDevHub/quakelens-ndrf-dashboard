@@ -1,13 +1,45 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-dark: #0B0F1A;
+  --card-bg: #161B2B;
+  --card-border: #232D42;
+  --accent-cyan: #22D3EE;
+  --text-dim: #94A3B8;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  background-color: var(--bg-dark);
+  color: #F8FAFC;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
 }
+
+.custom-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.5);
+  border-radius: 1.25rem;
+}
+
+.sidebar-item-active {
+  background: linear-gradient(90deg, rgba(34, 211, 238, 0.15) 0%, rgba(34, 211, 238, 0) 100%);
+  border-left: 4px solid var(--accent-cyan);
+  color: var(--accent-cyan);
+}
+
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  background: #000 !important;
+}
+
+/* Custom Scrollbar for Tactical Feed */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--card-border); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent-cyan); }
